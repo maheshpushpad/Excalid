@@ -1,64 +1,82 @@
-body, html {
+* {
     margin: 0;
-    -webkit-text-size-adjust: 100%;
-    width: 100%;
-    height: 100%;
+    padding: 0;
+}
+#root {
+    width: 100vw ;
+    height: 100vh;
     overflow: hidden;
-    background-color: #f2f2f2;
+    position: relative ;
 }
-#root{
-    height: 100%;
-    user-select: none;
-}
-.ToolIcon__icon>svg{
-    width: 25px;
-    height:25px;
-}
-.vertical-line{
-    border-left: 2px solid #f2f2f2;
-    height: 30px;
-}
-.ToolIcon__icon>div>svg{
-    width: 25px;
-    height:25px;
-}
-.ToolIcon__keybinding{
-    color: rgb(195, 193, 193);
-
-}
-.stackHorizontal{
-   background-color: white;
-   
+#canvas {
+    /* cursor: crosshair; */
+    object-fit: contain;
 }
 
-.right{
+#top {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-}
-.excalidraw-app{
-
-}
-.fixedSideContainer{
-    margin: 5px;
+    z-index: 10;
     padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    /* content: normal; */
-    justify-content: space-between;
 }
-/* Style the button */
+#top > .options{ 
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    border-radius: 10px;
+    padding: 4px 20px; 
+    box-shadow: 2px 2px 6px #E1E1E1;
+}
+.menu {
+    background-color: #ECECF3;
+    border-radius: 4px;
+}
+.btn {
+    border: none ;
+    padding: 4px 6px; 
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px !important;
+}
+.btn:hover{
+    background-color: #ECECF3;
+    border-radius: 4px;
+}
+.active {
+    background-color: #3a34eb;
+    border-radius: 4px;
+    color: white;
+}
 
-  
-  /* Style the SVG icon inside the button */
-  .dropDownMenuBtn svg {
-    width: 24px; /* Set the desired width */
-    height: 24px; /* Set the desired height */
-    stroke: black; /* Set the color of the lines */
-    stroke-width: 1; /* Set the line width */
-    fill: none; /* Ensure that the icon is not filled */
-  }
-  
-  /* Optional: Add a hover effect for the button */
-  .dropDownMenuBtn:hover {
-    background-color: lightgray;
-  }
-  
+#bottom {
+    position: absolute;
+    z-index: 100;
+    left: 20px;
+    bottom: 20px;
+}
+#bottom > .options {
+    background-color: #d1d1f2;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+
+.form {
+    position: fixed;
+    left: 10px;
+    top: 30vh ;
+    border: 1px solid #ededed;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
